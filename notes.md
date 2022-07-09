@@ -9,6 +9,30 @@ cd alfa3aDocs
 yarn install  
 yarn dev  
 
+## IMAGE MODULE NUXT 2 ONLY !!!
+yarn add --dev @nuxt/image
+nuxt.config.ts :
+    target: 'static',  buildModules: [    '@nuxt/image',  ]
+ou
+    target: 'server',  Modules: [    '@nuxt/image',  ]
+et
+    image: {    // Options  }
+yarn remove @nuxt/image
+
+## IMGE for NUXT 3 (experimental)
+yarn add --dev @nuxt/image-edge
+après un update de node :
+    sudo npm -g n
+    sudo n latest
+nuxt.config.ts :
+    modules: ++ '@nuxt/image-edge' 
+    image: {screens: { xs: 320, sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1536, '2xl': 1536 },}
+
+Attention :
+en static, les images utilisent le provider par defaut
+Il faut mettre les images sous 'public'
+pour Vercel, env. => il existe une variable d'environnement à préciser pour la racine des images
+
 
 
 
