@@ -1,9 +1,8 @@
 <script setup>
 const menuItems = [
-    {path: '/', title: 'Accueil'},
-    {path: '/category/head', title: 'Tête'},
-    {path: '/category/body', title: 'Hauts'},
-    {path: '/category/other', title: 'Autres'}
+    {path: '/documents/passage', title: 'Pas-sage'},
+    {path: '/documents/api', title: 'API'},
+    {path: '/documents/notes', title: 'Notes'}
 ]
 </script>
 
@@ -11,7 +10,7 @@ const menuItems = [
     <div class="flex h-full">
     <!-- START : SIDEBAR    -->
     <div class="fixed top-0 bottom-0 left-0 w-64 py-5 bg-primary text-primary-content">
-<h1 class="mt-5 px-5 text-2xl font-bold">DT Merch</h1>
+<h1 class="mt-5 px-5 text-2xl font-bold">Documents</h1>
 
 
     <ul class="menu w-full mt-10 px-0">

@@ -19,7 +19,7 @@ et
     image: {    // Options  }
 yarn remove @nuxt/image
 
-## IMGE for NUXT 3 (experimental)
+## IMAGE for NUXT 3 (experimental)
 yarn add --dev @nuxt/image-edge
 après un update de node :
     sudo npm -g n
@@ -33,7 +33,7 @@ en static, les images utilisent le provider par defaut
 Il faut mettre les images sous 'public'
 pour Vercel, env. => il existe une variable d'environnement à préciser pour la racine des images
 
-
+## tailwind css > branch tailwindBranch
 
 
 
