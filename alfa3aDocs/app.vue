@@ -1,7 +1,9 @@
 <template>
   <div>
   <Header />
-    <NuxtPage />
+ <NuxtLayout>
+<NuxtPage /> 
+ </NuxtLayout>
   </div>
 </template>
 <script setup>
@@ -15,7 +17,7 @@ useHead({
     { name: 'description', content: 'My amazing site.' }
   ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }    ],
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }    ],
   bodyAttrs: {
     class: 'test'
   }
