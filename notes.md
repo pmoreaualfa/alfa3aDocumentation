@@ -33,8 +33,58 @@ en static, les images utilisent le provider par defaut
 Il faut mettre les images sous 'public'
 pour Vercel, env. => il existe une variable d'environnement à préciser pour la racine des images
 
+## Tailwind (nouvelle branch 'tailwind')
+### source
+[Install Tailwind CSS with Nuxt.js - Tailwind CSS](https://tailwindcss.com/docs/guides/nuxtjs)
 
+### install
+npm install -D tailwindcss postcss@latest autoprefixer@latest
+npx tailwindcss init
 
+assets/css/main.css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+nuxt.config.ts
+ buildModules: ['@nuxt/postcss8'],
+ build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
+  },
+css: [
+    '@/assets/css/main.css',
+  ],
+tailwind.config.ts
+    module.exports = {
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    // "./nuxt.config.{js,ts}",
+    "./app.vue"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+ERROR Importing directly from a nuxt.config file is not allowed.
+> tailwind.config.js : commenter la ligne
+// "./nuxt.config.{js,ts}",
+
+# daisyui.com
+[Components — Tailwind CSS Components](https://daisyui.com/components/)
+npm i daisyui
+tailwind.config.js
 
 
 

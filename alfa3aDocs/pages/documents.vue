@@ -4,6 +4,9 @@ const { path } = useRoute()
 const { data: docsPassage } = await useAsyncData(`content-${path}-passage`, () => {
   return queryContent(path + '/passage').only(['title','slug','_path']).find()
 })
+const { data: docsApi } = await useAsyncData(`content-${path}-api`, () => {
+  return queryContent(path + '/api').only(['title','slug','_path']).find()
+})
 const { data: docsNotes } = await useAsyncData(`content-${path}-notes`, () => {
   return queryContent(path + '/notes').only(['title','slug','_path']).find()
 })
@@ -29,6 +32,11 @@ const { data: docsNotes } = await useAsyncData(`content-${path}-notes`, () => {
       <!-- PASSAGE -->
       <div style="background-color: lightgray"> dossier : Passage </div>
       <div v-for="doc in docsPassage">
+      <p><nuxt-link :to="doc._path"> {{doc.title}}</nuxt-link></p>
+      </div>
+    <!-- API -->
+      <div style="background-color: lightgray"> dossier : API </div>
+      <div v-for="doc in docsApi">
       <p><nuxt-link :to="doc._path"> {{doc.title}}</nuxt-link></p>
       </div>
     <!-- NOTES -->

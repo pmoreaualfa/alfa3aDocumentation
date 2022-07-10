@@ -12,4 +12,18 @@ export default defineNuxtConfig({
     baseAuthor: "Phil Mor" 
   },
   plugins: [],
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
+  },
+
+  css: [
+    '@/assets/css/main.css',
+  ],
 })
