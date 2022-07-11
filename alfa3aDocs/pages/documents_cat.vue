@@ -14,12 +14,20 @@
           <p class="mt-2 max-w-2xl text-xl text-gray-500 lg:mx-auto">
             Derniers sujets traités.
           </p>
-
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            route : {{ route }}
+          </p>
+          <p class="mt-2 max-w-2xl text-2xl text-gray-800 lg:mx-auto bg-primary rounded">
+            Catégorie :
+            <span class="text-red-100">
+              {{ cat }}
+            </span>
+          </p>
         </div>
 
         <div class="mt-2">
           <!-- PASSAGE -->
-          <div>
+          <div v-if="cat === 'passage'">
             <div style="background-color: lightgray">dossier : Passage</div>
             <div v-for="doc in docsPassage">
               <p>
@@ -28,7 +36,7 @@
             </div>
           </div>
           <!-- API -->
-          <div>
+          <div v-else-if="cat === 'api'">
             <div style="background-color: lightgray">dossier : API</div>
             <div v-for="doc in docsApi">
               <p>
@@ -37,7 +45,7 @@
             </div>
           </div>
           <!-- NOTES -->
-          <div>
+          <div v-else-if="cat === 'notes'">
             <div style="background-color: lightgray">dossier : Notes</div>
             <div v-for="doc in docsNotes">
               <p>
@@ -46,7 +54,7 @@
             </div>
           </div>
           <!-- SOMMAIRE -->
-          <div>
+          <div v-else>
             <div style="background-color: lightgray">dossier : SOMMAIRE</div>
           </div>
         </div>
@@ -56,7 +64,22 @@
 </template>
 
 <script setup>
-const {path} = useRoute();
+const route = useRoute();
+const path = route.path;
+const name = route.name;
+const query = route.query;
+const cat = query.cat;
+
+const router = useRouter();
+const twitchStreamer = ref("");
+
+watch(cat, (cat, previous) => {
+  router.push({
+    path: "/path",
+    query: { streamer: twitchScattreamer },
+  });
+});
+
 const { data: docsPassage } = await useAsyncData(`content-${path}-passage`, () => {
   return queryContent(path + "/passage")
     .only(["title", "slug", "_path"])

@@ -23,8 +23,8 @@ useHead({
   }
 })
 
-definePageMeta({
-  title: 'Some Page DefinePageMeta'
-})
+// definePageMeta({
+//   title: 'Some Page DefinePageMeta'
+// })
 
 </script>
