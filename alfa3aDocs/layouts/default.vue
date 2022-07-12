@@ -1,6 +1,6 @@
 <script setup>
 const menuItems = [
-  { path: "/documents?cat=passage", title: "Pas-sage" },
+  { path: "/gouv/communes", title: "Communes" },
   { path: "/documents?cat=api", title: "API" },
   { path: "/documents?cat=notes", title: "Notes" },
 ];
@@ -14,7 +14,7 @@ const menuItems = [
       <div
         class="fixed top-0 mt-14 ml-1 bottom-0 left-1 w-40 py-2 bg-secondary text-silver"
       >
-        <h1 class="mt-1 px-5 text-sm font-bold text-alfa-orange ">Documentation</h1>
+        <h1 class="mt-1 px-5 text-sm font-bold text-alfa-orange ">Test en cours</h1>
 
         <ul class="menu w-full mt-4 px-0">
           <li v-for="menuItem in menuItems" class="hover-bordered text-sm">
@@ -24,7 +24,7 @@ const menuItems = [
       </div>
       <!-- END : SIDEBAR -->
       <!-- START : MAIN CONTENT -->
-      <div class="pl-48 w-full  mt-10">
+      <div class="pl-48 w-full  mt-24 ">
 
           <slot />
 

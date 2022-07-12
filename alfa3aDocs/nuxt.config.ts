@@ -26,4 +26,7 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
+  runtimeConfig: {
+    SENTRY_DSN: process.env.SENTRY_DSN
+  }
 })

@@ -1,5 +1,9 @@
-import * as Sentry from '@sentry/node'
+// import * as Sentry from '@sentry/node'
 
 export default defineEventHandler((event)=>{
-    console.log('Route', event.req.url)
+    // const  { SENTRY_DSN } = useRuntimeConfig()
+    // Sentry.init({dsn: SENTRY_DSN})
+    // event.context.sentry = Sentry
 })
+// dans API .ts
+// const { sentry } = event.context

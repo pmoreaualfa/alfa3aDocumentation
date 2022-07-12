@@ -10,10 +10,24 @@
         {{ docsApi }}
       </div>
     </div>
+<div>{{response}}</div>
+<div>{{communes}}</div>
   </div>
 </template>
 
 <script setup>
+const communes = await $fetch("/api/gouv/apigeo?departement=91", {
+  method: "GET",
+}).catch((e) => e.data);
+console.log({ communes });
+
+
+
+const response = await $fetch("/api/hello/martin", {
+  method: "GET",
+}).catch((e) => e.data);
+console.log({ response });
+
 const { data: docsTest } = await useAsyncData(`content-documents`, () => {
   return queryContent("/documents")
     .where({ app: "passage" })
@@ -22,8 +36,10 @@ const { data: docsTest } = await useAsyncData(`content-documents`, () => {
 });
 
 // console.log('get button name : ', myDoc.originalTarget.firstChild.data)
- const { data: docsApi } = await useAsyncData(`content-documents`, () => $fetch('/api/documents'))
-    // console.log("test : ", ret);
+const { data: docsApi } = await useAsyncData(`content-documents`, () =>
+  $fetch("/api/documents")
+);
+// console.log("test : ", ret);
 // const myTest = async ()=>{
 //     // const { title: ret } = await this.$content('documents').only(['title']).fetch()
 //     return await fetch(`/api/documents`).then((a) => a.json())

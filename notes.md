@@ -86,8 +86,42 @@ ERROR Importing directly from a nuxt.config file is not allowed.
 npm i daisyui
 tailwind.config.js
 
+# sentry gestion d'erreur
+non compatible nuxt 3
+sauf
+source : 
+[Use Sentry with Nuxt 3 | Vue tutorial | pipinghot.dev](https://pipinghot.dev/tutorial/use-sentry-with-nuxt-3/)
+devtheory : Création d'une API dans le dossier server / Middlewares & Runtime config
 
-
+# mongodb API
+var axios = require('axios');
+var data = JSON.stringify({
+    "collection": "<COLLECTION_NAME>",
+    "database": "<DATABASE_NAME>",
+    "dataSource": "ALFA3A",
+    "projection": {
+        "_id": 1
+    }
+});
+            
+var config = {
+    method: 'post',
+    url: 'https://data.mongodb-api.com/app/data-brivv/endpoint/data/v1/action/findOne',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Request-Headers': '*',
+      'api-key': '<API_KEY>',
+    },
+    data: data
+};
+            
+axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 
 
 
