@@ -1,7 +1,7 @@
 <script setup>
 const menuItems = [
   { path: "/gouv/communes", title: "Communes" },
-  { path: "/documents?cat=api", title: "API" },
+  { path: "/contacts/contacts", title: "Contacts" },
   { path: "/documents?cat=notes", title: "Notes" },
 ];
 </script>

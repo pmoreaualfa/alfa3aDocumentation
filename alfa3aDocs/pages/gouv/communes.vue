@@ -1,6 +1,6 @@
 <template>
   <div>
-     <img width="20px" src="@/public/logos/apigouvfr.svg" alt="logo api gouv fr" class="w-40 h-10">
+     <img width="20px" src="@/logos/apigouvfr.svg" alt="logo api gouv fr" class="w-40 h-10">
     <div>
       site :
       <NuxtLink to="https://api.gouv.fr/documentation/api-geo" target="_blank">
@@ -52,21 +52,9 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
 const communesActives = useCommunesActives();
 const deptDefaut = useDeptDefaut();
 const nbrCommunes = useNbrCommunes();
-// onMounted(async () => {
-//     // const url = "/api/gouv/apigeo?dept=91";
-//     const url = `/api/gouv/apigeo?dept=${deptDefaut.value}`;
-//     const ret = await useFetch(url);
-//     const communesData = ret.data.value;
-//     const nbrCommunesRet = communesData.nbrCommunes;
-//     const communesRet = communesData.communes;
-//     nbrCommunes.value = nbrCommunesRet;
-//     communesActives.value = communesRet;
-//     return;
-//   });
 
 const changeCommunesActives = async () => {
 let prefixDept = ""
@@ -74,10 +62,6 @@ if (deptDefaut.value < 10){
     prefixDept = "0"
       console.log("prefixDept : ", prefixDept);
     }
-// else {
-//     // const dept = deptDefaut.value
-//     console.log("dept : ", ">10");
-//     }
 
   const url = `/api/gouv/apigeo?dept=${prefixDept}${deptDefaut.value}`;
   console.log("url : ", url);
@@ -88,7 +72,6 @@ if (deptDefaut.value < 10){
   console.log("nbrCommunesRet : ", nbrCommunesRet);
   console.log("communesRet : ", communesRet);
 
-//   nbrCommunes.value = nbrCommunesRet;
   communesActives.value = communesRet;
   return;
 };

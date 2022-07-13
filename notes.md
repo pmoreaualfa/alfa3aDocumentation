@@ -86,44 +86,31 @@ ERROR Importing directly from a nuxt.config file is not allowed.
 npm i daisyui
 tailwind.config.js
 
+# heroicon
+https://github.com/whardier/nuxt-hero-icons
+npm i @nuxt-hero-icons/solid
+npm i @nuxt-hero-icons/outline
+nuxt-config.ts :
+buildModules: [
+    '@nuxt-hero-icons/outline/nuxt',
+    '@nuxt-hero-icons/solid/nuxt'
+]
+
 # sentry gestion d'erreur
 non compatible nuxt 3
 sauf
 source : 
 [Use Sentry with Nuxt 3 | Vue tutorial | pipinghot.dev](https://pipinghot.dev/tutorial/use-sentry-with-nuxt-3/)
+[(28) MongoDB Crash Course - YouTube](https://www.youtube.com/watch?v=ofme2o29ngU)
 devtheory : Création d'une API dans le dossier server / Middlewares & Runtime config
 
-# mongodb API
-var axios = require('axios');
-var data = JSON.stringify({
-    "collection": "<COLLECTION_NAME>",
-    "database": "<DATABASE_NAME>",
-    "dataSource": "ALFA3A",
-    "projection": {
-        "_id": 1
-    }
-});
-            
-var config = {
-    method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-brivv/endpoint/data/v1/action/findOne',
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Request-Headers': '*',
-      'api-key': '<API_KEY>',
-    },
-    data: data
-};
-            
-axios(config)
-    .then(function (response) {
-        console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+# mongodb 
+## install
+source : [(28) Connecting nuxt api to MongoDB | Zero to Deployed app with nuxtjs - YouTube](https://www.youtube.com/watch?v=klf2_1dfbQM&t=40s)
+npm install mongodb
 
-
+## H3
+[H3](https://h3.js.org/)
 
 # erreur key
 [How to fix "Permission denied (publickey)." error when pushing to Github (mac) | UHD Ed](https://uhded.com/fix-permission-denied-public-key-github-error)

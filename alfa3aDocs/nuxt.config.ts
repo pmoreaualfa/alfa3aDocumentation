@@ -7,7 +7,11 @@ export default defineNuxtConfig({
     screens: { xs: 320, sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1536, '2xl': 1536 },
   },
   content: {},
-  modules: ['@nuxt/content','@nuxt/image-edge'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/image-edge',
+    '@/modules/mongodb-setup.js'
+  ],
   publicRuntimeConfig: {
     baseAuthor: "Phil Mor" 
   },
@@ -28,5 +32,9 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     SENTRY_DSN: process.env.SENTRY_DSN
-  }
+  },
+  buildModules: [
+    '@nuxt-hero-icons/outline/nuxt',
+    '@nuxt-hero-icons/solid/nuxt'
+]
 })

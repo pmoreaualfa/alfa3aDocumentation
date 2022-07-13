@@ -1,0 +1,14 @@
+[
+    { "name": "My test product 2",
+"description": "Some stuff 2",
+"inStock": true, "price": 4002
+    },
+    { "name": "My test product 3",
+    "description": "Some stuff 3",
+    "inStock": false, "price": 4003
+        },
+        { "name": "My test product 4",
+        "description": "Some stuff 4",
+        "inStock": true, "price": 4004
+            }
+]
